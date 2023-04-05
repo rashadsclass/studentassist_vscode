@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!--Title and Style-->
+    <head>
+    <title>Student Assist!</title>
+    <link rel ="stylesheet" href ="../styles.css">
+    </head>
+
+    <!--Body-->
+    <body>
+        <!--Header/Navigation-->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="flashcards.html">Flashcards</a></li>
+                </ul>
+            </nav>
+            <h1>
+                Student Assist
+            </h1>
+            <h2>
+                GPA Calculator
+            </h2>
+        </header>
+        <!--Calculator-->
+        <section>
+           <div>
+            <input type = "number" placeholder = "Number 1" id = "num1"/>
+            <br>
+            <input type = "number" placeholder = "Number 2" id = "num2"/>
+            <br/>
+            <button id="calculate">Calculate</button>
+            <input type="number" readonly id="result"/>
+
+            <script type ="text/javascript">
+                var n1 = document.getElementById("num1");
+                var n2 = document.getElementById("num2");
+                var res = document.getElementById("result");
+
+                document.getElementById("calculate").addEventListener("click",function()
+                {
+                    res.value = parseInt(n1.value) + parseInt(n2.value);
+                });
+            </script>
+
+           </div>
+        </section>
+    </body>
+</html>
