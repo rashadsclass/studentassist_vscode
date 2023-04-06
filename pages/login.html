@@ -25,29 +25,13 @@
                 GPA Calculator
             </h2>
         </header>
-        <!--Calculator-->
-        <section>
-           <div>
-            <input type = "number" placeholder = "Number 1" id = "num1"/>
-            <br>
-            <input type = "number" placeholder = "Number 2" id = "num2"/>
-            <br/>
-            <button id="calculate">Calculate</button>
-            <input type="number" readonly id="result"/>
-
-            <!--Script for Calculator-->
-            <script type ="text/javascript">
-                var n1 = document.getElementById("num1");
-                var n2 = document.getElementById("num2");
-                var res = document.getElementById("result");
-
-                document.getElementById("calculate").addEventListener("click",function()
-                {
-                    res.value = parseInt(n1.value) + parseInt(n2.value);
-                });
-            </script>
-
-           </div>
-        </section>
-    </body>
-</html>
+        <!--Login-->
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br>
+          
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br>
+          
+            <input type="submit" value="Submit">
+          </form>
