@@ -1,6 +1,6 @@
 body
         {
-            background: rgb(58,58,58);
+            background: rgb(69, 95, 165);
             color: white;
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
@@ -9,13 +9,13 @@ body
 
         header
         {
-            background: black;
+            background: rgb(48, 66, 117);
             padding: 20px;
         }
 
         section
         {
-            background: rgb(116, 15, 15);
+            background: rgb(53, 78, 148);
             padding: 20px;
             display: flex;
             flex-direction: row;
@@ -23,13 +23,13 @@ body
 
         footer
         {
-            background: gray;
+            background: rgb(69, 95, 165);
             padding: 20px;
         }
 
         div
         {
-            background: blue;
+            background:rgb(69, 95, 165);
             margin: auto;
             width: 100px;
 
@@ -47,3 +47,25 @@ body
             display: inline-block;
             margin-right: 20px;
         }
+
+        .flashcard{
+            color:black;
+            width: 300x;
+            height: 200px;
+            word-wrap: break-word;
+            margin: 10px; 
+            background:#fff;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+            position: relative;
+          }
+          
+          .flashcard h2{font-size: 1rem;}
+          
+          .fa-minus{
+            top: 3%;
+            right: 2%;
+            position: absolute;
+            color: #1a1a1a;
+            transition: 0.3s ease-out;
+          }
