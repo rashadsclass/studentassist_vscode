@@ -69,3 +69,14 @@ body
             color: #1a1a1a;
             transition: 0.3s ease-out;
           }
+/* link */
+a:link{
+    color: hotpink;
+}
+
+a:visited{
+    color:hotpink;
+}
+a:active{
+    color:rgb(12, 255, 12);
+}
