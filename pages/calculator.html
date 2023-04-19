@@ -37,12 +37,14 @@
                         <input type="number" name="weights[]" min="0" max="100" step="0.01" required>
                     </div>-->
                     <table name="gradeTable">
-                        <tr><td>Course</td><td>Grade</td><td>Weight</td></tr>
+                        <thead><tr><th>Course</th><th>Grade</th><th>Weight</th></tr></thead>
+                        <tbody>
                         <tr>
                             <td><input type="text" name="course" min="0" max="9" step="0.01"></td> 
                             <td><input type="number" name="grades[]" min="0" max="10" step="0.01"></td>
                             <td><input type="number" name="weights[]" min="0" max="10" step="0.01"></td>
                         </tr>
+                    </tbody>
                     </table>
                     <br>
                 </div>
@@ -59,11 +61,11 @@
         
                 function addGrade() {
                     //var container = document.getElementById("grades-container");
-                    var table = document.getElementById("gradeTable");
-                    var row = table.insertRow(-1);
-                    var courseRow = table.insertCell(0);
-                    var gradeRow = table.insertCell(1);
-                    var weightRow = table.insertCell(2);
+                    var table = document.getElementById("gradeTable").getElementsByTagName('tBody')[0];
+                    var row = table.insertRow();
+                    var courseRow = row.insertCell();
+                    var gradeRow = row.insertCell();
+                    var weightRow = row.insertCell();
                     var courseInput = document.createElement("input");
                     var gradeInput = document.createElement("input");
                     var weightInput = document.createElement("input");
@@ -73,7 +75,7 @@
                     courseInput.setAttribute("min", "0");
                     courseInput.setAttribute("max", "9");
                     courseInput.setAttribute("step", "0.01");
-                    courseRow.innerHTML = courseInput;
+                    courseRow.appendChild(courseInput);
 
                     gradeInput.setAttribute("type", "number");
                     gradeInput.setAttribute("name", "grades[]");
@@ -81,7 +83,7 @@
                     gradeInput.setAttribute("max", "10");
                     gradeInput.setAttribute("step", "0.01");
                     gradeInput.setAttribute("required", "");
-                    gradeRow.innerHTML = gradeInput;
+                    gradeRow.appendChild(gradeInput);
 
                     weightInput.setAttribute("type", "number");
                     weightInput.setAttribute("name", "weights[]");
@@ -89,7 +91,7 @@
                     weightInput.setAttribute("max", "10");
                     weightInput.setAttribute("step", "0.01");
                     weightInput.setAttribute("required", "");
-                    weightRow.innerHTML = weightInput;
+                    weightRow.appendChild(weightInput);
 
                     //container.appendChild(tr);
 
