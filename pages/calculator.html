@@ -59,11 +59,11 @@
         
                 function addGrade() {
                     //var container = document.getElementById("grades-container");
-                    var container = document.getElementById("gradeTable");
-                    var tr = document.createElement("tr");
-                    var td1 = document.createElement("td");
-                    var td2 = document.createElement("td");
-                    var td3 = document.createElement("td");
+                    var table = document.getElementById("gradeTable");
+                    var row = table.insertRow(-1);
+                    var courseRow = table.insertCell(0);
+                    var gradeRow = table.insertCell(1);
+                    var weightRow = table.insertCell(2);
                     var courseInput = document.createElement("input");
                     var gradeInput = document.createElement("input");
                     var weightInput = document.createElement("input");
@@ -73,7 +73,7 @@
                     courseInput.setAttribute("min", "0");
                     courseInput.setAttribute("max", "9");
                     courseInput.setAttribute("step", "0.01");
-                    td1.appendChild(courseInput);
+                    courseRow.innerHTML = courseInput;
 
                     gradeInput.setAttribute("type", "number");
                     gradeInput.setAttribute("name", "grades[]");
@@ -81,7 +81,7 @@
                     gradeInput.setAttribute("max", "10");
                     gradeInput.setAttribute("step", "0.01");
                     gradeInput.setAttribute("required", "");
-                    td2.appendChild(gradeInput);
+                    gradeRow.innerHTML = gradeInput;
 
                     weightInput.setAttribute("type", "number");
                     weightInput.setAttribute("name", "weights[]");
@@ -89,13 +89,9 @@
                     weightInput.setAttribute("max", "10");
                     weightInput.setAttribute("step", "0.01");
                     weightInput.setAttribute("required", "");
-                    td3.appendChild(weightInput);
+                    weightRow.innerHTML = weightInput;
 
-                    tr.appendChild(td1);
-                    tr.appendChild(td2);
-                    tr.appendChild(td3);
-
-                    container.appendChild(tr);
+                    //container.appendChild(tr);
 
                     /*var div = document.createElement("div");
                     var label1 = document.createElement("label");
