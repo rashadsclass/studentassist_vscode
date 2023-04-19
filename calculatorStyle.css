@@ -1,0 +1,177 @@
+body
+        {
+            background: rgb(69, 95, 165);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header
+        {
+            background: rgb(48, 66, 117);
+            padding: 20px;
+        }
+
+        section
+        {
+            background: rgb(53, 78, 148);
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        footer
+        {
+            background: rgb(69, 95, 165);
+            padding: 20px;
+        }
+
+        div
+        {
+            background:rgb(60a5ff); /* button bg */
+            margin: auto;
+            width: 700px;
+
+        }
+
+        ul
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li
+        {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .flashcard{
+            color:black;
+            width: 300x;
+            height: 200px;
+            word-wrap: break-word;
+            margin: 10px; 
+            background:#fff;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+            position: relative;
+          }
+          
+          .flashcard h2{font-size: 1rem;}
+          
+          .fa-minus{
+            top: 3%;
+            right: 2%;
+            position: absolute;
+            color: #1a1a1a;
+            transition: 0.3s ease-out;
+          }
+/* link */
+a:link{
+    color: hotpink;
+}
+
+a:visited{
+    color:hotpink;
+}
+a:active{
+    color:rgb(12, 255, 12);
+}
+
+/* Calculator Style */
+input[type="number"], input[type="text"], button {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  label {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  button {
+    background-color: #ffffff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+  }
+  
+  input[type="button"] {
+    background-color: #ffffff;
+    
+  }
+  
+  input[type="button"]:hover {
+    background-color: #006F8B;
+  }
+  
+  input[disabled] {
+    background-color: #f1f1f1;
+    color: #888;
+    cursor: not-allowed;
+  }
+
+  #calculator-container {
+    padding: 16px;
+    margin: 16px;
+    border: 0px solid #ffffff;
+    border-radius: 4px;
+  }
+
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #000000;
+    --background-color: #60a5ff;
+    --border-color: #000000;
+  }
+  
+  button, a {
+    color: var(--primary-color);
+  }
+  
+  button:hover, a:hover {
+    color: var(--secondary-color);
+  }
+  
+  #calculator-container {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+  }
+
+  button:hover {
+    background-color: #006F8B;
+    color: white;
+  }
+  
+  button:active {
+    background-color: #4CAF50;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #60a5ff;
+    color: white;
+  }
+  
+  input[type="button"]:active {
+    background-color: #008CBA;
+  }
+  
+  input[disabled] {
+    background-color: white;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  body {
+    max-width: 5000px;
+    margin: 0 auto;
+  }
