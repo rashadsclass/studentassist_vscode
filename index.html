@@ -15,7 +15,6 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="pages/calculator.html">Calculator</a></li>
-                    <li><a href="pages/flashcards.html">Flashcards</a></li>
                     <li><a href="pages/login.html">Login</a></li>
                 </ul>
             </nav>
@@ -23,17 +22,29 @@
                 Student Assist
             </h1>
             <h2>
-                Home
+                Select Course
             </h2>
         </header>
         
-        <section>
-            <div>a</div>
-            <div>b</div>
-            <div>c</div>
-        </section>
+        <body>
+            <h1>Course Creator</h1>
+                <label for="courseNameInput">Course Name:</label>
+                <input id="courseNameInput" type="text">
+                <button id="createCourseButton" onclick="createCourse()">Create Course</button>
+                <hr>
+                <div id="courseList"></div>
+                <hr>
+                <div id="flashcardSection" style="display: none;">
+                  <h2>Flashcards</h2>
+                  <label for="questionInput">Question:</label>
+                  <input id="questionInput" type="text">
+                  <br>
+                  <label for="answerInput">Answer:</label>
+                  <input id="answerInput" type="text">
+                  <button id="addFlashcardButton" onclick="addFlashcard()">Add Flashcard</button>
+                  <ul id="flashcardList"></ul>
+                </body>
 
-        <section>lower section  </section>
-        <footer>footer</footer>
+        <script src="C:\Users\andyb\OneDrive\Projects\New branch\studentassist_vscode\course.js"></script>
     </body>
 </html>
