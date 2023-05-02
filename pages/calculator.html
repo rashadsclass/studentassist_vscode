@@ -3,7 +3,7 @@
     <!--Title and Style-->
     <head>
     <title>Student Assist!</title>
-    <link rel ="stylesheet" href ="../styles.css">
+    <link rel ="stylesheet" href ="../calculatorStyle.css">
     </head>
 
     <!--Body-->
@@ -14,6 +14,7 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="flashcards.html">Flashcards</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
@@ -25,123 +26,88 @@
             </h2>
         </header>
         <!--Calculator-->
-        <body>
-            <h1>Student Grade Calculator</h1>
-            <form id="grades-form">
-                <div id="grades-container">
-                    <!--<div>
-                        <label for="grade1">Grade 1:</label>
-                        <input type="number" name="grades[]" min="0" max="100" step="0.01" required>
-                        <label for="weight1">Weighted Total:</label>
-                        <input type="number" name="weights[]" min="0" max="100" step="0.01" required>
-                    </div>-->
-                    <table name="gradeTable">
-                        <thead><tr><th>Course</th><th>Grade</th><th>Weight</th></tr></thead>
-                        <tbody>
-                        <tr>
-                            <td><input type="text" name="course" min="0" max="9" step="0.01"></td> 
-                            <td><input type="number" name="grades[]" min="0" max="10" step="0.01"></td>
-                            <td><input type="number" name="weights[]" min="0" max="10" step="0.01"></td>
-                        </tr>
-                    </tbody>
-                    </table>
-                    <br>
-                </div>
-                <button type="button" onclick="addGrade()">Add Grade</button>
-                <br><br>
-                <input type="button" value="Calculate Grade" onclick="calculateGrade()">
-                <br><br>
-                <label for="total">Total:</label>
-                <input type="text" id="total" disabled>
-            </form>
-        
-            <script>
-                var gradeCount = 1;
-        
-                function addGrade() {
-                    //var container = document.getElementById("grades-container");
-                    var table = document.getElementById("gradeTable").getElementsByTagName('tBody')[0];
-                    var row = table.insertRow();
-                    var courseRow = row.insertCell();
-                    var gradeRow = row.insertCell();
-                    var weightRow = row.insertCell();
-                    var courseInput = document.createElement("input");
-                    var gradeInput = document.createElement("input");
-                    var weightInput = document.createElement("input");
 
-                    courseInput.setAttribute("type", "text");
-                    courseInput.setAttribute("name", "course");
-                    courseInput.setAttribute("min", "0");
-                    courseInput.setAttribute("max", "9");
-                    courseInput.setAttribute("step", "0.01");
-                    courseRow.appendChild(courseInput);
-
-                    gradeInput.setAttribute("type", "number");
-                    gradeInput.setAttribute("name", "grades[]");
-                    gradeInput.setAttribute("min", "0");
-                    gradeInput.setAttribute("max", "10");
-                    gradeInput.setAttribute("step", "0.01");
-                    gradeInput.setAttribute("required", "");
-                    gradeRow.appendChild(gradeInput);
-
-                    weightInput.setAttribute("type", "number");
-                    weightInput.setAttribute("name", "weights[]");
-                    weightInput.setAttribute("min", "0");
-                    weightInput.setAttribute("max", "10");
-                    weightInput.setAttribute("step", "0.01");
-                    weightInput.setAttribute("required", "");
-                    weightRow.appendChild(weightInput);
-
-                    //container.appendChild(tr);
-
-                    /*var div = document.createElement("div");
-                    var label1 = document.createElement("label");
-                    var input1 = document.createElement("input");
-                    var label2 = document.createElement("label");
-                    var input2 = document.createElement("input");
-        
-                    label1.setAttribute("for", "grade" + (gradeCount + 1));
-                    label1.textContent = "Grade " + (gradeCount + 1) + ":";
-                    input1.setAttribute("type", "number");
-                    input1.setAttribute("name", "grades[]");
-                    input1.setAttribute("min", "0");
-                    input1.setAttribute("max", "100");
-                    input1.setAttribute("step", "0.01");
-                    input1.setAttribute("required", "");
-        
-                    label2.setAttribute("for", "weight" + (gradeCount + 1));
-                    label2.textContent = "Weight:";
-                    input2.setAttribute("type", "number");
-                    input2.setAttribute("name", "weights[]");
-                    input2.setAttribute("min", "0");
-                    input2.setAttribute("max", "100");
-                    input2.setAttribute("step", "0.01");
-                    input2.setAttribute("required", "");
-        
-                    div.appendChild(label1);
-                    div.appendChild(input1);
-                    div.appendChild(label2);
-                    div.appendChild(input2);
-                    container.appendChild(div); */
-        
-                   // gradeCount++;
-                }
-        
-                function calculateGrade() {
-                    var grades = document.getElementsByName("grades[]");
-                    var weights = document.getElementsByName("weights[]");
-                    var gradeSum = 0;
-                    var weightSum = 0;
-        
-                    for (var i = 0; i < grades.length; i++) {
-                        gradeSum += parseFloat(grades[i].value) * parseFloat(weights[i].value);
-                        weightSum += parseFloat(weights[i].value);
+    <head>
+        <title>Student Grade Calculator</title>
+    </head>
+    <body>
+        <div id="calculator-container">
+            <body>
+                <h3>Student Grade Calculator</h3>
+                <form id="grades-form">
+                    <div id="grades-container">
+                        <div>
+                            <label for="grade1">Grade 1:</label>
+                            <input type="number" name="grades[]" min="0" max="100" step="0.01" required>
+                            <label for="weight1">Weighted Total:</label>
+                            <input type="number" name="weights[]" min="0" max="100" step="0.01" required>
+                        </div>
+                        <br>
+                    </div>
+                    <button type="button" onclick="addGrade()">Add Grade</button>
+                    <br><br>
+                    <input type="button" value="Calculate Grade" onclick="calculateGrade()">
+                    <br><br>
+                    <label for="total">Total:</label>
+                    <input type="text" id="total" disabled>
+                </form>
+            
+                <script>
+                    var gradeCount = 1;
+            
+                    function addGrade() {
+                        var container = document.getElementById("grades-container");
+                        var div = document.createElement("div");
+                        var label1 = document.createElement("label");
+                        var input1 = document.createElement("input");
+                        var label2 = document.createElement("label");
+                        var input2 = document.createElement("input");
+            
+                        label1.setAttribute("for", "grade" + (gradeCount + 1));
+                        label1.textContent = "Grade " + (gradeCount + 1) + ":";
+                        input1.setAttribute("type", "number");
+                        input1.setAttribute("name", "grades[]");
+                        input1.setAttribute("min", "0");
+                        input1.setAttribute("max", "100");
+                        input1.setAttribute("step", "0.01");
+                        input1.setAttribute("required", "");
+            
+                        label2.setAttribute("for", "weight" + (gradeCount + 1));
+                        label2.textContent = "Weight:";
+                        input2.setAttribute("type", "number");
+                        input2.setAttribute("name", "weights[]");
+                        input2.setAttribute("min", "0");
+                        input2.setAttribute("max", "100");
+                        input2.setAttribute("step", "0.01");
+                        input2.setAttribute("required", "");
+            
+                        div.appendChild(label1);
+                        div.appendChild(input1);
+                        div.appendChild(label2);
+                        div.appendChild(input2);
+                        container.appendChild(div);
+            
+                        gradeCount++;
                     }
-        
-                    var finalGrade = gradeSum / weightSum;
-        
-                    document.getElementById("total").value = finalGrade.toFixed(2) + "%";
-                }
-            </script>
-        </body>
-        </html>
+            
+                    function calculateGrade() {
+                        var grades = document.getElementsByName("grades[]");
+                        var weights = document.getElementsByName("weights[]");
+                        var gradeSum = 0;
+                        var weightSum = 0;
+            
+                        for (var i = 0; i < grades.length; i++) {
+                            gradeSum += parseFloat(grades[i].value) * parseFloat(weights[i].value);
+                            weightSum += parseFloat(weights[i].value);
+                        }
+            
+                        var finalGrade = gradeSum / weightSum;
+            
+                        document.getElementById("total").value = finalGrade.toFixed(2) + "%";
+                    }
+                </script>
+            </body>
+            </html>
+        </div>
+    </body>
+</html>
