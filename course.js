@@ -78,6 +78,7 @@ function addFlashcard()
   const flashcard = new Flashcard(question, answer);
   const courseId = getCurrentCourseId();
   const course = getCourseFromLocalStorage(courseId);
+  deleteCourse(course);
   course.addFlashcard(flashcard);
   questionInput.value = '';
   answerInput.value = '';
@@ -124,30 +125,43 @@ function displayCourses()
 
 function displayFlashcards(course) 
 {
-    coursePrime = new Course(course.id, course.name, course.flashcards); 
+    coursePrime = new Course(course.name); 
+    coursePrime.id = course.id;
+    coursePrime.flashcards = course.flashcards;
     setCurrentCourseId(course.id);
     const flashcardSection = document.getElementById('flashcardSection');
     const flashcardList = document.getElementById('flashcardList');
     flashcardList.innerHTML = '';
-    coursePrime.getFlashcards().forEach(flashcard => 
-        {
-            const flashcardItem = document.createElement('li');
-            const question = document.createElement('div');
-            question.textContent = flashcard.getQuestion();
-            const answer = document.createElement('div');
-            answer.textContent = flashcard.getAnswer();
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.onclick = function() 
-            {
-                removeFlashcard(flashcard);
-            };
-        flashcardItem.appendChild(question);
-        flashcardItem.appendChild(answer);
-        flashcardItem.appendChild(deleteButton);
-        flashcardList.appendChild(flashcardItem);
-        });
-    flashcardSection.style.display = 'block';
+    coursePrime.getFlashcards().forEach(flashcard =>
+      {
+      const flashcardItem = document.createElement('li');
+      const question = document.createElement('div');
+      question.textContent = flashcard.question;
+      const answer = document.createElement('div');
+      answer.style.display = 'none'; 
+      const answerButton = document.createElement('button');
+      answerButton.textContent = 'Show Answer';
+      answerButton.onclick = function() 
+      {
+          answer.style.display = 'block'; 
+          answerButton.style.display = 'none'; 
+      };
+      answer.textContent = flashcard.answer;
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.onclick = function() 
+      {
+          coursePrime.removeFlashcard(flashcard);
+          deleteCourse(coursePrime);
+          displayFlashcards(coursePrime);
+      };
+      flashcardItem.appendChild(question);
+      flashcardItem.appendChild(answerButton);
+      flashcardItem.appendChild(answer);
+      flashcardItem.appendChild(deleteButton);
+      flashcardList.appendChild(flashcardItem);
+  });
+  flashcardSection.style.display = 'block';
 }
 
 function saveCourseToLocalStorage(course) 
@@ -160,7 +174,7 @@ function saveCourseToLocalStorage(course)
 function deleteCourse(course) 
 {
     const courses = getCoursesFromLocalStorage();
-    const index = courses.findIndex(c => c.id === course.id);
+    const index = courses.findIndex(c => c.id == course.id);
     if (index !== -1) 
     {
         courses.splice(index, 1);
@@ -171,9 +185,7 @@ function deleteCourse(course)
 function getCourseFromLocalStorage(courseId) 
 {
   const courses = getCoursesFromLocalStorage();
-  console.log(courses);
-  console.log(courseId); 
-  const plainCourse = courses.find(c => c.id === courseId); 
+  const plainCourse = courses.find(c => c.id == courseId); 
   const course = new Course(plainCourse.name);
   course.id = plainCourse.id;
   course.flashcards = plainCourse.flashcards.map(f => new Flashcard(f.question, f.answer));
