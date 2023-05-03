@@ -1,0 +1,146 @@
+body
+        {
+            background: rgb(245, 245, 247);
+            color: rgb(44, 44, 44);
+            font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+            margin: 0;
+            text-align: center;
+            padding: 0;
+        }
+
+        button
+        {
+        
+                color: rgb(5, 0, 45); 
+                font-size: 16px; 
+                line-height: 16px; 
+                padding: 8px; 
+                border-radius: 19px; 
+                font-family: Verdana, Geneva, Tahoma, sans-serif, serif; 
+                font-style: normal; 
+                font-variant: normal; 
+                text-transform: none; 
+                border: 2px solid #0c0074; 
+                display: inline-block;
+        }
+
+        button:hover
+        {
+            background-color: #0c0074;
+            color: white;
+        }
+
+        header
+        {
+            text-align: center;
+            background: rgb(205, 207, 211);
+            padding: 20px;
+        }
+
+        section
+        {
+            text-align: center;
+            background: rgb(183, 186, 192);
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        footer
+        {
+            text-align: center;
+            background: rgb(245, 245, 247);
+            padding: 20px;
+        }
+
+        div
+        {
+            text-align: center;
+            background:rgb(245, 245, 247);
+            margin: auto;
+            width: 100px;
+
+        }
+
+        label
+        {
+            text-align: center;
+            margin: auto;
+        }
+
+        hr 
+        {
+            text-align: center;
+        }
+
+        h1
+        {
+            text-align: center;
+        }
+
+        ul
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .coursename
+        {
+            text-align: center;
+        }
+
+        .courseInput
+        {
+            text-align: center;
+        }
+
+        li
+        {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .flashcard{
+            color:black;
+            width: 300x;
+            height: 200px;
+            word-wrap: break-word;
+            margin: 10px; 
+            background:#fff;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+            position: relative;
+          }
+          
+          .flashcard h2{font-size: 1rem;}
+          
+          .fa-minus{
+            top: 3%;
+            right: 2%;
+            position: absolute;
+            color: #1a1a1a;
+            transition: 0.3s ease-out;
+          }
+/* link */
+a:link{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+    color: #0c0074;
+    text-decoration: none;
+}
+
+a:visited{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+    color:#0c0074;
+    text-decoration: none;
+}
+a:active{
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+    color:#341eff;
+    text-decoration: none;
+}
+a:hover
+{
+    color:#341eff;
+    text-decoration: none;
+}

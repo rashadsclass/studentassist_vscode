@@ -3,7 +3,7 @@
     <!--Page Title-->
     <head>
         <title>Student Assist!</title>
-        <link rel ="stylesheet" href ="styles.css">
+        <link rel ="stylesheet" href ="indexStyle.css">
 
     </head>
 
@@ -22,8 +22,11 @@
                 Student Assist
             </h1>
             <h2>
-                Select Course
+                Home
             </h2>
+            <!--<h2>
+                Select Course
+            </h2>-->
         </header>
         
         <body>
@@ -31,20 +34,28 @@
                 <label for="courseNameInput">Course Name:</label>
                 <input id="courseNameInput" type="text">
                 <button id="createCourseButton" onclick="createCourse()">Create Course</button>
+                <br>
+                <br>
                 <hr>
                 <div id="courseList"></div>
+                <br>
                 <hr>
                 <div id="flashcardSection" style="display: none;">
                   <h2>Flashcards</h2>
                   <label for="questionInput">Question:</label>
+                  <br>
                   <input id="questionInput" type="text">
+                  <br>
                   <br>
                   <label for="answerInput">Answer:</label>
                   <input id="answerInput" type="text">
+                  <br>
+                  <br>
                   <button id="addFlashcardButton" onclick="addFlashcard()">Add Flashcard</button>
+                  <br>
                   <ul id="flashcardList"></ul>
                 </body>
 
-        <script src="F:\OneDrive\Projects\Student Assist\studentassist_vscode\course.js"></script>
+        <script src="course.js"></script>
     </body>
 </html>
