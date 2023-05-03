@@ -8,7 +8,7 @@
             "type": "msedge",
             "request": "launch",
             "name": "Launch Edge against localhost",
-            "file": "F:/OneDrive/Projects/Student Assist/studentassist_vscode/index.html"
+            "file": "index.html"
         }
     ]
 }
