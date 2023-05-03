@@ -70,7 +70,7 @@
                         var input2 = document.createElement("input");
             
                         label1.setAttribute("for", "grade" + (gradeCount + 1));
-                        label1.textContent = "Grade " + (gradeCount + 1) + ":";
+                        label1.textContent = "Grade " + (gradeCount + 1) + ": ";
                         input1.setAttribute("type", "number");
                         input1.setAttribute("name", "grades[]");
                         input1.setAttribute("min", "0");
@@ -79,7 +79,7 @@
                         input1.setAttribute("required", "");
             
                         label2.setAttribute("for", "weight" + (gradeCount + 1));
-                        label2.textContent = "Weight:";
+                        label2.textContent = " Weighted Total:";
                         input2.setAttribute("type", "number");
                         input2.setAttribute("name", "weights[]");
                         input2.setAttribute("min", "0");
@@ -92,6 +92,9 @@
                         div.appendChild(label2);
                         div.appendChild(input2);
                         container.appendChild(div);
+
+                        // Add some margin-bottom to the new div element
+                        div.style.marginBottom = "15px";
             
                         gradeCount++;
                     }
