@@ -78,10 +78,10 @@ function addFlashcard()
   const flashcard = new Flashcard(question, answer);
   const courseId = getCurrentCourseId();
   const course = getCourseFromLocalStorage(courseId);
-  deleteCourse(course);
   course.addFlashcard(flashcard);
   questionInput.value = '';
   answerInput.value = '';
+  deleteCourse(course);
   displayFlashcards(course);
 }
 
@@ -107,7 +107,6 @@ function displayCourses()
         courseLink.onclick = function() 
         {
           displayFlashcards(course);
-          return false;
         };
 
         const deleteButton = document.createElement('button');

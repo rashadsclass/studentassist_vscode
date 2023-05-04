@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <!--Title and Style-->
     <head>
-    <title>Student Assist!</title>
-    <link rel ="stylesheet" href ="../loginStyle.css">
+        <title>Student Assist!</title>
+        <link rel="stylesheet" href="F:\OneDrive\Projects\Student Assist\studentassist_vscode\styles\loginStyle.css">
     </head>
 
-    <!--Body-->
     <body>
-        <!--Header/Navigation-->
         <header>
             <nav>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="calculator.html">Calculator</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
-            <h1>
-                Student Assist
-            </h1>
-            <h2>
-                Login
-            </h2>
+            <h1>Student Assist</h1>
+            <h2>Login</h2>
         </header>
-        <!--Login-->
-        <form action="" method="post">
+
+        <form action="" method="post" id="login-form">
             <br>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username"><br>
@@ -35,5 +26,48 @@
             <input type="password" id="password" name="password"><br>
             <br>
           
-            <button type="submit" value="Submit">Login</button>
-          </form>
+            <button type="submit" id="login-button" disabled>Login</button>
+        </form>
+
+        <script>
+            const correctUsername = "exampleUser";
+            const correctPassword = "userPassword";
+
+            const form = document.querySelector("#login-form");
+            const usernameInput = form.querySelector("#username");
+            const passwordInput = form.querySelector("#password");
+            const loginButton = form.querySelector("#login-button");
+
+            form.addEventListener("submit", function(event) 
+            {
+                event.preventDefault();
+                const enteredUsername = usernameInput.value;
+                const enteredPassword = passwordInput.value;
+                if (enteredUsername === correctUsername && enteredPassword === correctPassword) 
+                {
+                    window.location.href = "F:/OneDrive/Projects/Student Assist/studentassist_vscode/pages/index.html";
+                } 
+                else 
+                {
+                    alert("Incorrect username or password. Please try again.");
+                }
+            });
+
+            // enable the login button only if both username and password inputs are filled
+            function toggleLoginButton() 
+            {
+                if (usernameInput.value && passwordInput.value) 
+                {
+                    loginButton.removeAttribute("disabled");
+                } 
+                else 
+                {
+                    loginButton.setAttribute("disabled", "disabled");
+                }
+            }
+
+            usernameInput.addEventListener("input", toggleLoginButton);
+            passwordInput.addEventListener("input", toggleLoginButton);
+        </script>
+    </body>
+</html>
