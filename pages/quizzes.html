@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+    <link rel ="stylesheet" href ="..\styles\indexStyle.css">
+</head>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quizzes.html">Calculator</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+
+    </ul>
+</nav>
+<body>
+	<!-- Quiz creation form -->
+	<form>
+		<label for="question">Question:</label>
+		<input type="text" id="question" name="question"><br>
+
+		<label for="option1">Option 1:</label>
+		<input type="text" id="option1" name="option1"><br>
+
+		<label for="option2">Option 2:</label>
+		<input type="text" id="option2" name="option2"><br>
+
+		<label for="option3">Option 3:</label>
+		<input type="text" id="option3" name="option3"><br>
+
+		<label for="option4">Option 4:</label>
+		<input type="text" id="option4" name="option4"><br>
+
+		<label for="answer">Correct Answer:</label>
+		<select id="answer" name="answer">
+			<option value="option1">Option 1</option>
+			<option value="option2">Option 2</option>
+			<option value="option3">Option 3</option>
+			<option value="option4">Option 4</option>
+		</select><br>
+
+		<input type="button" value="Add Question" onclick="addQuestion();">
+	</form>
+
+	<!-- Quiz questions -->
+	<div id="quiz-questions">
+		<!-- Quiz questions will be displayed here -->
+	</div>
+
+	<!-- Quiz submission form -->
+	<form>
+		<!-- Quiz questions and answer choices will be inserted dynamically here -->
+
+		<input type="button" value="Submit Quiz" onclick="submitQuiz();">
+	</form>
+
+	<script src="..\javaScript\quizzes.js"></script>
+</body>
+</html>
